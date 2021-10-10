@@ -16,7 +16,7 @@ jobs:
       - persist_to_workspace:
           root: /tmp/workspace
           paths:
-            - "/output.txt"
+            - "output.txt"
   save_hello_world_output:
     docker:
       - image: circleci/node:13.8.0
