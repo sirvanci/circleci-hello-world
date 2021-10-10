@@ -14,7 +14,7 @@ jobs:
     steps:
       - run: echo $MY_FIRST_ENV > output.txt
       - persist_to_workspace:
-          root: /tmp/output.txt
+          root: /tmp/workspace
           paths:
             - "/output.txt"
   save_hello_world_output:
@@ -22,7 +22,7 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - attach_workspace:
-          at: /tmp/output.txt
+          at: /tmp/workspace
       - run: cat output.txt
 workflows:
   # Name the workflow "welcome"
