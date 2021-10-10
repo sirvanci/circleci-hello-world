@@ -30,6 +30,11 @@ jobs:
       - attach_workspace:
           at: ~/
       - run: cat ~/output.txt
+      - run: return 1
+      - run: 
+         command: echo fail !!
+         when: on_fail
+
 workflows:
   # Name the workflow "welcome"
   welcome:
